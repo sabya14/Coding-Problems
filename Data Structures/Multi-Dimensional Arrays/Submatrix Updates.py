@@ -21,7 +21,7 @@ for row in range(no_of_rows + 1):
 	for col in range(1, no_of_columns + 1):
 		blist[row][col] = blist[row][col] + blist[row][col - 1]
 
-for row in range(no_of_rows):
+for row in range(no_of_rows):	
 	for col in range(no_of_columns):
 		alist[row][col] = alist[row][col] + blist[row][col]
 
