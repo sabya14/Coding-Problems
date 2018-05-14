@@ -1,7 +1,7 @@
 """
 Problem Statement = https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/
 practice-problems/algorithm/mandee-and-his-girlfriend-9a96aabd/
-"""
+""" 
 size, no_of_queries = map(int, input().split())
 hash = [0] * (size + 1)
 diff = 0
