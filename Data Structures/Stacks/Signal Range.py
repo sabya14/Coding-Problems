@@ -1,26 +1,22 @@
 no_of_test_cases = int(input())
-size = int(input())
 for i in range(no_of_test_cases):
+	size = int(input())
 	alist = list(map(int, input().split()))
-	values = [1]
-	indexes = [alist[0]]
+	result = [1]
+	stack_min = [(alist[0], 0)]
 
 	for index, element in enumerate(alist[1:]):
-		# print('index: ', index, 'element: ', element, alist[index], element > alist[index] )
 		val = 0
 		if element >= alist[index]:
-			pos = index
-			for pos, elements in enumerate(indexes):
-				if elements <= element:
-					val = val + 1
-				# # indexes.pop()
-				# pos = pos - 1
-				# if pos < 0:
-				# 	break
-			indexes.append(element)
-			values.append(val + 1)
+			index = len(stack_min)
+			while stack_min[-1][0] <= element:
+				val = val + result[stack_min[-1][1]]
+				stack_min.pop()
+				if len(stack_min) == 0:
+					break
+			result.append(val + 1)
+			stack_min.append((element, index + 1))
 		else:
-			values.append(1)
-			indexes.append(element)
-
-	print(*values)
+			result.append(1)
+			stack_min.append((element, index + 1))
+	print(*result)
