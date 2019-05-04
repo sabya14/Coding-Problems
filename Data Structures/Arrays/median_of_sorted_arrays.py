@@ -17,7 +17,7 @@ def sorted_list_median(_list):
 def find_sorted_arrays(list_a, list_b) -> float:
     """
     Make a third list, which contains element in sorted order, then find median
-    log(n+m)
+    O(n+m)
     :param list_a:
     :param list_b:
     :return:
@@ -41,7 +41,7 @@ def find_sorted_arrays(list_a, list_b) -> float:
             combined_list.append(list_a[a])
             a += 1
     return  sorted_list_median(combined_list)
- 
+
 
 if __name__ == "__main__":
     assert find_sorted_arrays([-7, -2, 0, 3, 4], [1, 5, 9]) == 2.0
