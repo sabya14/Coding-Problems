@@ -13,7 +13,7 @@ def sorted_list_median(_list):
     else:
         return _list[int(n/2)]
 
-
+ 
 def find_sorted_arrays(list_a, list_b) -> float:
     """
     Make a third list, which contains element in sorted order, then find median
